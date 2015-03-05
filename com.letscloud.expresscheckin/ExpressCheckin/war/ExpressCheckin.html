@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<!-- The DOCTYPE declaration above will set the     -->
+<!-- browser's rendering engine into                -->
+<!-- "Standards Mode". Replacing this declaration   -->
+<!-- with a "Quirks Mode" doctype is not supported. -->
+
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<!--                                                               -->
+<!-- Consider inlining CSS to reduce the number of requested files -->
+<!--                                                               -->
+<link type="text/css" rel="stylesheet" href="ExpressCheckin.css">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet"
+	href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<script
+	src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+<!--                                           -->
+<!-- Any title is fine                         -->
+<!--                                           -->
+<title>Express checkin</title>
+
+<!--                                           -->
+<!-- This script loads your compiled module.   -->
+<!-- If you add any GWT meta tags, they must   -->
+<!-- be added before this line.                -->
+<!--                                           -->
+<script type="text/javascript" language="javascript"
+	src="expresscheckin/expresscheckin.nocache.js"></script>
+</head>
+
+<!--                                           -->
+<!-- The body can have arbitrary html, or      -->
+<!-- you can leave the body empty if you want  -->
+<!-- to create a completely dynamic UI.        -->
+<!--                                           -->
+<body>
+
+	<!-- RECOMMENDED if your web app will not function without JavaScript enabled -->
+	<noscript>
+		<div
+			style="width: 22em; position: absolute; left: 50%; margin-left: -11em; color: red; background-color: white; border: 1px solid red; padding: 4px; font-family: sans-serif">
+			Your web browser must have JavaScript enabled in order for this
+			application to display correctly.</div>
+	</noscript>
+
+	<div data-role="page" id="homePage">
+		<div data-role="header">
+			<h1>Hotel HostWare</h1>
+		</div>
+
+		<div data-role="content">
+			<p>Dear Mr. Raymond	Camden,</p>
+
+			<p>Welcome to the Hotel HostWare. We are a luxury hotel
+				specializing in catering to the rich and overly privileged. You will
+				find our accommodations both flattering to your ego, as well as
+				damaging to your wallet. Enjoy our complimentary wi-fi access, as
+				well as caviar baths while sleeping in beds with gold thread.</p>
+
+			<p>This app allows you checkin and provides information how to
+				reach the hotel.</p>
+
+			<ul data-role="listview" data-inset="true">
+				<li data-icon="check"><a href="#guestlist" data-transition="slide">Checkin</a></li>
+				<li data-icon="location"><a href="#hotelinfo" data-transition="slide">Find Us</a></li>
+			</ul>
+		</div>
+	</div>
+
+
+	<div data-role="page" id="guestlist" data-transition="slide">
+		<div data-role="header" data-add-back-btn="true">
+			<h1>Guests List</h1>
+		</div>
+
+		<div data-role="content">
+			<p>
+				R-No: <strong>99.999999</strong>
+			</p>
+
+			<ul data-role="listview" data-inset="true">
+				<li data-role="list-divider">Guests waiting to checkin</li>
+				<li><a href="#guest01" data-transition="slide">Mr. Raymond
+						Camden</a></li>
+				<li><a href="#guest01" data-transition="slide">Ms. Rita
+						Camden</a></li>
+				<li data-role="list-divider">In-house guests</li>
+				<li><a href="#guest03" data-transition="slide">Mr. Rudolf
+						Camden</a></li>
+			</ul>
+		</div>
+	</div>
+
+
+	<div data-role="page" id="guest01">
+		<div data-role="header" data-add-back-btn="true">
+			<h1>Guest Checkin</h1>
+		</div>
+
+		<div data-role="content">
+			<p>
+				R-No: <strong>99.999999</strong>
+			</p>
+
+			<form action="echo.cfm" method="post">
+				<div data-role="fieldcontain">
+					<label for="name">Name:</label> <input type="text" name="name"
+						id="name" value="Mr. Raymond Camden" />
+				</div>
+
+				<div data-role="fieldcontain">
+					<label for="email">Email:</label> <input type="text" name="email"
+						id="email" value="" />
+				</div>
+
+				<div data-role="fieldcontain">
+					<label for="phone">Phone:</label> <input type="text" name="phone"
+						id="phone" value="" />
+				</div>
+
+				<div data-role="fieldcontain">
+					<label for="address">Address:</label> <input type="text"
+						name="address" id="address" value="" />
+				</div>
+
+				<div data-role="fieldcontain">
+					<label for="city">City:</label> <input type="text" name="city"
+						id="city" value="" />
+				</div>
+
+				<div data-role="fieldcontain">
+					<label for="postalCode">Postal Code:</label> <input type="text"
+						name="postalCode" id="postalCode" value="" />
+				</div>
+
+				<div data-role="fieldcontain">
+					<label for="country">Country:</label> <select name="country"
+						id="country">
+						<option value="A">Austria</option>
+						<option value="D">Germany</option>
+						<option value="H">Hungary</option>
+						<option value="USA">USA</option>
+					</select>
+				</div>
+
+				<div data-role="fieldcontain">
+					<label for="birthsday">Birthsday:</label> <input type="text"
+						name="birthsday" id="birthsday" data-role="date" />
+				</div>
+
+				<div data-role="fieldcontain">
+					<label for="vehicleLicence">Vehicle Licence:</label> <input
+						type="text" name="vehicleLicence" id="vehicleLicence" value="" />
+				</div>
+
+				<div data-role="fieldcontain">
+					<label for="note">Note:</label>
+					<textarea name="note" id="note"></textarea>
+				</div>
+
+				<div data-role="fieldcontain">
+					<input type="submit" name="submit" value="Checkin" />
+				</div>
+			</form>
+		</div>
+	</div>
+
+
+	<div data-role="page" id="guest03">
+		<div data-role="header" data-add-back-btn="true">
+			<h1>Modify Data</h1>
+		</div>
+
+		<div data-role="content">
+			<p>
+				R-No: <strong>99.999999</strong>
+			</p>
+
+			<form action="echo.cfm" method="post">
+				<div data-role="fieldcontain">
+					<label for="name">Name:</label> <input type="text" name="name"
+						id="name" value="Mr. Rudolf Camden" />
+				</div>
+
+				<div data-role="fieldcontain">
+					<label for="email">Email:</label> <input type="text" name="email"
+						id="email" value="" />
+				</div>
+
+				<div data-role="fieldcontain">
+					<label for="phone">Phone:</label> <input type="text" name="phone"
+						id="phone" value="" />
+				</div>
+
+				<div data-role="fieldcontain">
+					<label for="address">Address:</label> <input type="text"
+						name="address" id="address" value="" />
+				</div>
+
+				<div data-role="fieldcontain">
+					<label for="city">City:</label> <input type="text" name="city"
+						id="city" value="" />
+				</div>
+
+				<div data-role="fieldcontain">
+					<label for="postalCode">Postal Code:</label> <input type="text"
+						name="postalCode" id="postalCode" value="" />
+				</div>
+
+				<div data-role="fieldcontain">
+					<label for="country">Country:</label> <select name="country"
+						id="country">
+						<option value="A">Austria</option>
+						<option value="D">Germany</option>
+						<option value="H">Hungary</option>
+						<option value="USA">USA</option>
+					</select>
+				</div>
+
+				<div data-role="fieldcontain">
+					<label for="birthsday">Birthsday:</label> <input type="text"
+						name="birthsday" id="birthsday" data-role="date" />
+				</div>
+
+				<div data-role="fieldcontain">
+					<label for="vehicleLicence">Vehicle Licence:</label> <input
+						type="text" name="vehicleLicence" id="vehicleLicence" value="" />
+				</div>
+
+				<div data-role="fieldcontain">
+					<label for="note">Note:</label>
+					<textarea name="note" id="note"></textarea>
+				</div>
+
+				<div data-role="fieldcontain">
+					<input type="submit" name="submit" value="Save data" />
+				</div>
+			</form>
+		</div>
+	</div>
+
+
+
+	<div data-role="page" id="hotelinfo">
+		<div data-role="header" data-add-back-btn="true">
+			<h1>Find Us</h1>
+		</div>
+
+		<div data-role="content">
+			<p>The Hotel HostWare is located in beautiful suburban Zugló,
+				Budapest. Good food, good music, and all around good times, the
+				Hotel HostWare is smack dab in the middle of one of the most
+				interesting cities in Central Europe!</p>
+			<p>1149 Budapest, Róna street 120.</p>
+			<p>
+				<img
+					src="http://maps.googleapis.com/maps/api/staticmap?center=11149+Budapest,+Róna utca 120.zoom=12&size=150x150&scale=2&maptype=roadmap&markers=label:H%7C11149+Budapest,+Róna utca 120.&sensor=false">
+			</p>
+		</div>
+	</div>
+</body>
+</html>
